@@ -1,0 +1,1 @@
+PeopleCollection = new Meteor.Collection("people");
