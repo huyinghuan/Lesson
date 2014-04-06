@@ -16,4 +16,8 @@ Meteor.subscribe("people_safe",function(){
 	console.log(PeopleCollection.find({}).fetch());
 });
 **/
-
+Meteor.subscribe("people_safe",function(){
+	console.log("数据订阅完成");
+	//获取数据后打印  服务端发送过来的数据集
+	console.log(PeopleCollection.find({}).fetch());
+});
