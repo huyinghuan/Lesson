@@ -1,0 +1,19 @@
+<head>
+  <title>API-004</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  	{{greeting}}
+  	<br>
+  	<br>
+  	<br>
+	{{#with time}}
+		下次尝试连接的时间是:{{date}}<br>
+		下次尝试链接等待的秒数是:{{second}}
+	{{/with}}
+</template>
