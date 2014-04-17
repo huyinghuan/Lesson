@@ -1,0 +1,17 @@
+<body>
+	relative====================<br>
+	{{> relative}}
+	<br>======================================<br>
+	no relative====================<br>
+	{{> noRelative}}
+</body>
+<Template name="relative">
+	{{#each people}}
+		{{name}}-{{age}}-{{address}}<br>
+	{{/each}}
+</Template>
+<Template name="noRelative">
+	{{#each people}}
+		{{name}}-{{age}}-{{address}}<br>
+	{{/each}}
+</Template>
