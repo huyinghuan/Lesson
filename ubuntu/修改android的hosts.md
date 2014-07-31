@@ -4,16 +4,25 @@ ubuntu修改 android host
 
 ###
 在Android下，/etc是link到/system/etc的，我们需要修改/system/etc/hosts来实现。但是这个文件是只读，不能通过shell直接修改。可以通过连接到PC上使用adb来修改。
+1.  将hosts文件复制到PC：adb pull /system/etc/hosts hosts
 
-1、获得root权限：adb root
+2.  获取root权限
 
-2、设置/system为可读写：adb remount
+```
+adb shell
+su
+```
 
-3、将hosts文件复制到PC：adb pull /system/etc/hosts hosts
+3. 设置hosts为可读写
+```
+cd /system/etc/
+chmod 777 hosts
+```
 
-4、修改PC机上文件
 
-5、将PC机上文件复制到手机：adb push hosts /system/etc/hosts
+4. 修改PC机上文件
+
+5. 将PC机上文件复制到手机：adb push hosts /system/etc/hosts
 
 至此，对hosts的修改就成功了。无需重启哦～！～
 
